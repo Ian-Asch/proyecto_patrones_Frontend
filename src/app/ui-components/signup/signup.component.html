@@ -1,0 +1,72 @@
+<section>
+  <div class="row justify-content-center px-5">
+    <div>
+      <a href="./">home</a>
+    </div>
+    <div class="col-12 my-5">
+      <h1>Crear usuarios</h1>
+    </div>
+    <div class="col-4">
+      <form class="row align-items-end" (ngSubmit)="onSubmit()" #signUpForm="ngForm">
+        <div class="col--12">
+          <label class="form-label input-title" for="name">Nombre:</label>
+          <input type="text" class="form-control" id="name" name="name" minlength="4" [(ngModel)]="user.name" #name="ngModel" required>
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+            <div *ngIf="name.errors?.['required']">Name is required.</div>
+            <div *ngIf="name.errors?.['minlength']">
+             Debe de al menos contener 4 caracteres
+            </div>
+          </div>
+        </div>
+        <div class="col--12">
+          <label class="form-label input-title" for="id">Identificacion:</label>
+          <input type="text" class="form-control" id="id" name="id" maxlength="9" minlength="9" [(ngModel)]="user.identificationNumber" #id="ngModel" required>
+          <div *ngIf="id.invalid && (id.dirty || id.touched)" class="alert">
+            <div *ngIf="id.errors?.['required']">Identificacion es requerido.</div>
+            <div *ngIf="id.errors?.['minlength']">
+              Debe de al menos contener 9 digitos.
+            </div>
+          </div>
+        </div>
+        <div class="col--12">
+          <label class="form-label input-title" for="company">Empresa:</label>
+          <input type="text" class="form-control" id="company" minlength="4" name="company" [(ngModel)]="user.companyName" #company="ngModel" required>
+          <div *ngIf="company.invalid && (company.dirty || company.touched)" class="alert">
+            <div *ngIf="company.errors?.['required']">Empresa es requerido.</div>
+            <div *ngIf="company.errors?.['minlength']">
+              Debe de al menos contener 4 caracteres.
+            </div>
+          </div>
+        </div>
+        <div class="col--12">
+          <label class="form-label input-title" for="type">Tipo usuario:</label>
+          <select class="form-control" id="type" name="type" [(ngModel)]="user.userType">
+            <option value="carrier">Carrier</option>
+            <option value="client">client</option>
+            <option value="administrator">administrator</option>
+            <option value="approver">approver</option>
+            <option value="viewer">viewer</option>
+          </select>
+        </div>
+        <div class="col--12">
+          <label class="form-label input-title" for="password">Password:</label>
+          <input type="password" class="form-control" id="password" name="password" [(ngModel)]="user.password"
+            required>
+        </div>
+        <div class="col--12 mt-4" *ngIf="signUpForm.valid"> 
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+      <div class="col--12 mt-4" *ngIf="!signUpForm.valid"> 
+        <button disabled class="btn btn-primary">Save</button>
+      </div>
+    </div>
+    <div class="col-8 pt-5">
+      <!-- <app-map></app-map> -->
+    </div>
+  </div>
+</section>
+
+
+<error-modal-response></error-modal-response>
+<success-modal-response></success-modal-response>
