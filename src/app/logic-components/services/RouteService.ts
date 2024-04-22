@@ -51,7 +51,7 @@ export class RouteService {
     return this.http.delete(deleteUrl);
   }
 
-  public cloneRoute(routeId: number) {
+  public cloneRouteById(routeId: number) {
     const cloneUrl = `${this.apiUrl}/${routeId}/clone`;
     return this.http.post(cloneUrl, {});
   }
