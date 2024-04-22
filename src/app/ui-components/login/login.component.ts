@@ -23,7 +23,7 @@ export class LoginComponent {
       this.userService.authUser(this.identificationNumber, this.password).subscribe(
         (data) => {
           alert('Success: ' + JSON.stringify(data));
-          this.router.navigate(['/transporterView']);
+          this.router.navigate(['/transporterView', { identificationNumber: this.identificationNumber }]);
 
           this.concreteMediator.notify(this, 'SUCCESSRESPONSE', JSON.stringify(data));
         },
