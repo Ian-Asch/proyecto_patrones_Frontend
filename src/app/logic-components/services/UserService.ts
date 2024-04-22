@@ -24,4 +24,9 @@ export class UserService {
     public saveUser(user: User) {
         return this.http.post<Array<User>>(this.apiUrl, JSON.stringify(user), config);
     }
+
+    public authUser(identificationNumber: string, password: string) {
+        const authUrl = `${this.apiUrl}/auth`;
+        return this.http.get<User>(authUrl, { params: { identificationNumber, password } });
+    }
 }
