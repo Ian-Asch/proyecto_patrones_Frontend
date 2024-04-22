@@ -12,6 +12,7 @@ import {FormsModule} from "@angular/forms";
 import { TransporterEditModalComponent } from './ui-components/transporter/transporter-edit-modal/transporter-edit-modal.component';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { SignUpComponent } from './ui-components/signup/signup.component';
+import { LoginComponent } from './ui-components/login/login.component';
 import { ErrorResponseModal } from './ui-components/signup/error-response-modal/error-response-modal.component';
 import { SuccessResponseModal } from './ui-components/signup/success-response-modal/success-response-modal.component';
 
@@ -24,6 +25,7 @@ import { SuccessResponseModal } from './ui-components/signup/success-response-mo
     TransporterFormComponent,
     TransporterEditModalComponent,
     SignUpComponent,
+    LoginComponent,
     ErrorResponseModal,
     SuccessResponseModal
   ],
