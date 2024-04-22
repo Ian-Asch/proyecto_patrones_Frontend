@@ -7,9 +7,9 @@ import { TransporterViewComponent } from './ui-components/transporterView/transp
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: LoginComponent },
   {path: 'signup', component: SignUpComponent},
-  {path: 'login', component: LoginComponent},
+  // {path: 'login', component: LoginComponent},
   {path: 'transporterView', component: TransporterViewComponent}
 ];
 
