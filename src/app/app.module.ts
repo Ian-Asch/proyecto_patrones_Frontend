@@ -13,6 +13,7 @@ import { TransporterEditModalComponent } from './ui-components/transporter/trans
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { SignUpComponent } from './ui-components/signup/signup.component';
 import { LoginComponent } from './ui-components/login/login.component';
+import { TransporterViewComponent } from './ui-components/transporterView/transporterView.component';
 import { ErrorResponseModal } from './ui-components/signup/error-response-modal/error-response-modal.component';
 import { SuccessResponseModal } from './ui-components/signup/success-response-modal/success-response-modal.component';
 
@@ -27,7 +28,8 @@ import { SuccessResponseModal } from './ui-components/signup/success-response-mo
     SignUpComponent,
     LoginComponent,
     ErrorResponseModal,
-    SuccessResponseModal
+    SuccessResponseModal,
+    TransporterViewComponent
   ],
   imports: [
     BrowserModule,
