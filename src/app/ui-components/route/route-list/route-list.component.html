@@ -1,0 +1,26 @@
+<div>
+  <p class="sub-title">Rutas</p>
+</div>
+
+<div class="main-list">
+  <div *ngFor="let route of routes" class="list-group">
+    <div class="list-group-item">
+      <p class="list-item-title mb-0">ID: {{ route.routeID }}</p>
+      <p class="list-item-name mb-0">{{ route.name }}</p>
+      <p class="list-item-description mb-0">{{ route.description }}</p>
+      <p class="list-item-startPoint mb-0">Punto Inicial: {{ route.startPointID }}</p>
+      <p class="list-item-endPoint mb-0">Punto Final: {{ route.endPointID }}</p>
+      <p class="list-item-shippingCost mb-0">Costo de Envio: {{ route.shippingCost }}</p>
+      <p class="list-item-durationTime mb-0">Duración: {{ route.durationType }}</p>
+      <div class="mb-2 mt-2">
+        <div class="d-flex justify-content-between">
+          <button class="btn btn-dark" (click)="onCloneRoute(route.routeID)">Duplicar</button>
+          <button class="btn btn-dark" (click)="openEditModal(route.routeID)">Editar</button>
+          <button type="button" (click)="onDeleteRoute(route)" class="btn btn-danger">Borrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

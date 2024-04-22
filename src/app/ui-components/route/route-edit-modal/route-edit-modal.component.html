@@ -1,0 +1,43 @@
+<div class="modal-header">
+  <h4 class="modal-title">Actualización de ruta</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+  <form (ngSubmit)="onSubmit()" #editRouteForm="ngForm">
+    <div class="form-group">
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="toUpdateRoute.name" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="description">Descripción:</label>
+      <textarea id="description" name="description" [(ngModel)]="toUpdateRoute.description" class="form-control" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="startPointID">Punto de inicio:</label>
+      <input type="text" id="startPointID" name="startPointID" [(ngModel)]="toUpdateRoute.startPointID" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="endPointID">Punto de fin:</label>
+      <input type="text" id="endPointID" name="endPointID" [(ngModel)]="toUpdateRoute.endPointID" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="shippingCost">Costo de envío:</label>
+      <input type="number" id="shippingCost" name="shippingCost" [(ngModel)]="toUpdateRoute.shippingCost" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="approved">Aprobado:</label>
+      <input type="checkbox" id="approved" name="approved" [(ngModel)]="toUpdateRoute.approved" class="form-check-input">
+    </div>
+    <div class="form-group">
+      <label for="durationType">Tipo de duración:</label>
+      <select id="durationType" name="durationType" [(ngModel)]="toUpdateRoute.durationType" class="form-control" required>
+        <option value="SHORT">Corto</option>
+        <option value="MEDIUM">Medio</option>
+        <option value="LONG">Largo</option>
+      </select>
+    </div>
+    <div class="py-4">
+      <button type="submit" class="btn btn-outline-dark">Save</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,36 @@
+<div class="form-container py-4 border-bottom">
+  <h2 class="sub-title">Agregar ruta</h2>
+  <form class="row align-items-end" (ngSubmit)="onSubmit()" #routeForm="ngForm">
+    <div class="col-3">
+      <label class="form-label input-title" for="name">Nombre:</label>
+      <input type="text" class="form-control" id="name" name="name" [(ngModel)]="route.name" required>
+    </div>
+    <div class="col-3">
+      <label class="form-label input-title" for="description">Descripción:</label>
+      <input type="text" class="form-control" id="description" name="description" [(ngModel)]="route.description" required>
+    </div>
+    <div class="col-3">
+      <label class="form-label input-title" for="startPointID">Punto de inicio:</label>
+      <input type="text" class="form-control" id="startPointID" name="startPointID" [(ngModel)]="route.startPointID" required>
+    </div>
+    <div class="col-3">
+      <label class="form-label input-title" for="endPointID">Punto de fin:</label>
+      <input type="text" class="form-control" id="endPointID" name="endPointID" [(ngModel)]="route.endPointID" required>
+    </div>
+    <div class="col-3">
+      <label class="form-label input-title" for="shippingCost">Costo de envío:</label>
+      <input type="number" class="form-control" id="shippingCost" name="shippingCost" [(ngModel)]="route.shippingCost" required>
+    </div>
+    <div class="col-3">
+      <label class="form-label input-title" for="durationType">Tipo de duración:</label>
+      <select class="form-control" id="durationType" name="durationType" [(ngModel)]="route.durationType" required>
+        <option value="SHORT">Corto</option>
+        <option value="MEDIUM">Medio</option>
+        <option value="LONG">Largo</option>
+      </select>
+    </div>
+    <div class="col-3">
+      <button type="submit" class="btn btn-primary">Agregar</button>
+    </div>
+  </form>
+</div>
